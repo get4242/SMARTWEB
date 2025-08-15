@@ -1288,3 +1288,11 @@ section {
     margin-bottom: 6px;
     list-style-type: disc;
 }
+.inverter-img {
+    width: 100%;
+    max-width: 180px; /* ปรับขนาดตามต้องการ */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto; /* จัดรูปให้อยู่ตรงกลาง */
+}
