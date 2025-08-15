@@ -1219,4 +1219,101 @@ section {
         padding: 1.5rem;
     }
 }
+/* ===== Inverter Cards (override + new) ===== */
+
+/* กล่องการ์ด 2 ใบเรียงกันบนคอมพ์, หดเหลือ 1 ใบบนมือถือ */
+.inverter-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ตัวการ์ด */
+.inverter-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.inverter-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+/* กล่องรูป 1:1 (รองรับทั้งเบราเซอร์ใหม่/เก่า) */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;             /* สมัยใหม่ */
+    background: #F5F7FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* fallback ถ้าเบราเซอร์ไม่รองรับ aspect-ratio */
+.image-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.image-wrapper > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* รูปอินเวอร์เตอร์: ใช้ contain + เว้นขอบให้ดูสะอาด */
+.inverter-img {
+    object-fit: contain !important;  /* บังคับทับของเดิม */
+    padding: 16px;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ส่วนรายละเอียดใต้รูป */
+.inverter-info {
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.inverter-info h4 {
+    margin: 0;
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.inverter-info ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 18px;
+}
+.inverter-info li {
+    position: relative;
+    padding: 6px 0 6px 0;
+    color: #555;
+    line-height: 1.5;
+}
+.inverter-info li::before {
+    content: '•';
+    position: absolute;
+    left: -14px;
+    color: #FF6B35;
+    font-weight: 700;
+}
+
+/* Responsive: มือถือแสดง 1 คอลัมน์ */
+@media (max-width: 768px) {
+    .inverter-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
 
