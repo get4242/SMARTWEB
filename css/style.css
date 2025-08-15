@@ -1219,101 +1219,72 @@ section {
         padding: 1.5rem;
     }
 }
-/* ===== Inverter Cards (override + new) ===== */
-
-/* กล่องการ์ด 2 ใบเรียงกันบนคอมพ์, หดเหลือ 1 ใบบนมือถือ */
-.inverter-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-    gap: 24px;
-    align-items: stretch;
-}
-
-/* ตัวการ์ด */
-.inverter-card {
-    display: flex;
-    flex-direction: column;
+/* Inverter Section */
+.inverters {
+    text-align: center;
+    padding: 40px 20px;
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    overflow: hidden;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-.inverter-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
-/* กล่องรูป 1:1 (รองรับทั้งเบราเซอร์ใหม่/เก่า) */
-.image-wrapper {
-    position: relative;
+.inverters .product-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inverters .product-description {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.inverter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.inverter-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inverter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.inverter-image {
     width: 100%;
-    aspect-ratio: 1 / 1;             /* สมัยใหม่ */
-    background: #F5F7FA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: 1 / 1; /* รูปสี่เหลี่ยมจัตุรัส */
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
-/* fallback ถ้าเบราเซอร์ไม่รองรับ aspect-ratio */
-.image-wrapper::before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-}
-.image-wrapper > img {
-    position: absolute;
-    inset: 0;
+
+.inverter-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover; /* ครอบตัดให้พอดี */
+    display: block;
 }
 
-/* รูปอินเวอร์เตอร์: ใช้ contain + เว้นขอบให้ดูสะอาด */
-.inverter-img {
-    object-fit: contain !important;  /* บังคับทับของเดิม */
-    padding: 16px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
+.inverter-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-/* ส่วนรายละเอียดใต้รูป */
-.inverter-info {
-    padding: 18px 18px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.inverter-info h4 {
-    margin: 0;
-    color: #1E3A8A;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.inverter-info ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 18px;
-}
-.inverter-info li {
-    position: relative;
-    padding: 6px 0 6px 0;
-    color: #555;
-    line-height: 1.5;
-}
-.inverter-info li::before {
-    content: '•';
-    position: absolute;
-    left: -14px;
-    color: #FF6B35;
-    font-weight: 700;
+.inverter-card ul {
+    text-align: left;
+    padding-left: 20px;
+    color: #333;
 }
 
-/* Responsive: มือถือแสดง 1 คอลัมน์ */
-@media (max-width: 768px) {
-    .inverter-cards {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
+.inverter-card ul li {
+    margin-bottom: 6px;
+    list-style-type: disc;
 }
-
