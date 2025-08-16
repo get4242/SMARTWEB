@@ -172,6 +172,8 @@ p {
     color: white;
     overflow: hidden;
     padding-top: 70px; /* เพิ่มบรรทัดนี้ */
+}
+
 .hero-background {
     position: absolute;
     top: 0;
