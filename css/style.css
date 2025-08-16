@@ -172,6 +172,7 @@ p {
     color: white;
     overflow: hidden;
     padding-top: 70px; /* เพิ่มบรรทัดนี้ */
+
 }
 
 .hero-background {
@@ -180,11 +181,10 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        linear-gradient(rgba(16,185,129,0.6), rgba(59,130,246,0.6)), 
-        url("../assets/images/home.jpg") center/cover no-repeat;
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #10B981 100%);
     z-index: -2;
 }
+
 .hero-background::before {
     content: '';
     position: absolute;
