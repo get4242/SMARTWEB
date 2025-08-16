@@ -164,7 +164,7 @@ p {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh; /* ใช้ min-height เพื่อยืดหยุ่น */
     display: flex;
     align-items: center;
     justify-content: center;
