@@ -171,6 +171,7 @@ p {
     text-align: center;
     color: white;
     overflow: hidden;
+    padding-top: 70px; /* เพิ่มบรรทัดนี้ */
 }
 
 .hero-background {
@@ -1295,4 +1296,17 @@ section {
     object-fit: contain;
     display: block;
     margin: 0 auto; /* จัดรูปให้อยู่ตรงกลาง */
+}
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 90px; /* กัน header ทับข้อความ */
+    }
+
+    .hero-title {
+        font-size: 2rem; /* ย่อขนาด font บนมือถือ */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
 }
