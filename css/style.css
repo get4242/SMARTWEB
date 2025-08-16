@@ -548,7 +548,7 @@ section {
 
 .app-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
